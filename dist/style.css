@@ -12,20 +12,16 @@
 
 .myheader {
     grid-area: myheader;
-    background-color: green;
 }
 
 .mymenu {
     grid-area: mymenu;
-    background-color: blue;
 }
 
 .mycontent {
     grid-area: mycontent;
-    background-color: brown;
 }
 
 .myfooter {
     grid-area: myfooter;
-    background-color: bisque;
 }
