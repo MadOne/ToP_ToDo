@@ -1,22 +1,30 @@
 export default class ToDoList {
 	constructor(name) {
 		this.name = name;
-		this.items = [];
+		this.item = [];
 	}
 
 	append(item) {
-		this.items.push(item);
+		this.item.push(item);
 	}
 
 	remove(item) {
-		this.items.pop(item);
+		this.item.pop(item);
 	}
 
 	getItem(id) {
-		return this.items[id];
+		return this.item[id];
 	}
 
 	length() {
-		return this.items.length;
+		return this.item.length;
+	}
+
+	get name() {
+		return this._name;
+	}
+
+	set name(name) {
+		this._name = name;
 	}
 }
