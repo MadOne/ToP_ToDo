@@ -78,6 +78,9 @@ export default class Ui {
             <tr><td>Notes:</td>
                 <td><input type="text" id="inputNotes" value="${myItem.notes}"></td>
             </tr>
+			<tr><td>Notes:</td>
+                <td><input type="checkbox" id="inputDone" checked="${myItem.done}"></td>
+            </tr>
         </table>
         <button id="LinkBtnDetailCancel">Cancel</button><button id="linkBtnDetailSave_${i}">Save</button>`;
 		this.content.appendChild(myDiv);

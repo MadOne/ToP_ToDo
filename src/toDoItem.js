@@ -5,6 +5,7 @@ export default class ToDoItem {
 		this.dueDate = dueDate;
 		this.priority = priority;
 		this.notes = notes;
+		this.done = false;
 	}
 
 	get title() {
@@ -44,5 +45,13 @@ export default class ToDoItem {
 		this.dueDate = dueDate;
 		this.priority = priority;
 		this.notes = notes;
+	}
+
+	get done() {
+		return this._done;
+	}
+
+	set done(done) {
+		this._done = done;
 	}
 }

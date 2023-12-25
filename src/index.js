@@ -52,19 +52,11 @@ document.body.addEventListener("click", function (evt) {
 		mylist.append(myItem);
 		console.log(mylist);
 		myui.loadList(myui.activeListId);
+		mystorage.serialize();
 	}
 
 	if (evt.target.id == "LinkBtnDetailCancel") {
 		myui.loadList(myui.activeListId);
-	}
-
-	if (evt.target.id == "btnSave") {
-		console.log("saving to local storage");
-		mystorage.serialize();
-	}
-	if (evt.target.id == "btnLoad") {
-		console.log("loading from local storage");
-		mystorage.deserialize();
 	}
 
 	if (mysplit.length == 2) {
@@ -75,14 +67,18 @@ document.body.addEventListener("click", function (evt) {
 			let myDueDate = document.querySelector("#inputDueDate");
 			let myPriority = document.querySelector("#inputPriority");
 			let myNotes = document.querySelector("#inputNotes");
+			let myDone = document.querySelector("#inputDone");
 			myItem.update(
 				myTitle.value,
 				myDescription.value,
 				myDueDate.value,
 				myPriority.value,
-				myNotes.value
+				myNotes.value,
+				myDone.value
 			);
+			console.log(myDone.value);
 			myui.loadList(myui.activeListId);
+			mystorage.serialize();
 		}
 	}
 });
