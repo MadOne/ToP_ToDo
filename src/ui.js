@@ -19,6 +19,18 @@ export default class Ui {
 			li.appendChild(a);
 			this.Menu.appendChild(li);
 		}
+		let myBr = document.createElement("br");
+		this.Menu.appendChild(myBr);
+		this.Menu.appendChild(myBr);
+		this.Menu.appendChild(myBr);
+		this.Menu.appendChild(myBr);
+		let myTextBox = document.createElement("input");
+		myTextBox.id = "tbNewToDoList";
+		let myButton = document.createElement("button");
+		myButton.id = "btnNewToDoList";
+		myButton.innerHTML = "Add";
+		this.Menu.appendChild(myTextBox);
+		this.Menu.appendChild(myButton);
 	}
 	createList() {}
 

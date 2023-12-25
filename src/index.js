@@ -58,6 +58,13 @@ document.body.addEventListener("click", function (evt) {
 	if (evt.target.id == "LinkBtnDetailCancel") {
 		myui.loadList(myui.activeListId);
 	}
+	if (evt.target.id == "btnNewToDoList") {
+		let myTb = document.querySelector("#tbNewToDoList");
+		let myNewToDoList = new ToDoList(myTb.value);
+		mylists.addItem(myNewToDoList);
+		myui.createMenu();
+		myui.loadList(myui.activeListId);
+	}
 
 	if (mysplit.length == 2) {
 		if (mysplit[0] == "linkBtnDetailSave") {
