@@ -1,4 +1,4 @@
-.mypage {
+.myPage {
     display:grid;
     height: 100vh;
     width: 100vw;
@@ -10,18 +10,22 @@
     "myfooter myfooter";
 }
 
-.myheader {
+.myHeader {
     grid-area: myheader;
 }
 
-.mymenu {
+.myMenu {
     grid-area: mymenu;
 }
 
-.mycontent {
+.myContent {
     grid-area: mycontent;
 }
 
-.myfooter {
+.myFooter {
     grid-area: myfooter;
+}
+
+.myMenuList {
+    list-style: none;
 }
