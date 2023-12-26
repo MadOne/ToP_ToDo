@@ -6,30 +6,12 @@ import Ui from "./ui";
 
 let mylists = new ToDoLists();
 
-function loadDummyContent() {
-	let list1 = new ToDoList("myFirstList");
-	let list2 = new ToDoList("mySecondList");
-	let item1 = new ToDoItem(
-		"Title",
-		"description",
-		"dueDate",
-		"priority",
-		"notes"
-	);
-	list1.append(item1);
-	mylists.addItem(list1);
-	mylists.addItem(list2);
-	let myitem = list1.getItem(0);
-	myitem.title = "newTitle";
-}
-
-//myui.loadList(0);
-
 let mystorage = new Storage(mylists);
 mylists = mystorage.deserialize();
 let myui = new Ui(mylists);
 myui.linkDom();
 myui.createMenu();
+myui.loadList(0);
 
 document.body.addEventListener("click", function (evt) {
 	let mysplit = evt.target.id.split("_");
@@ -64,6 +46,7 @@ document.body.addEventListener("click", function (evt) {
 		mylists.addItem(myNewToDoList);
 		myui.createMenu();
 		myui.loadList(myui.activeListId);
+		mystorage.serialize();
 	}
 
 	if (mysplit.length == 2) {

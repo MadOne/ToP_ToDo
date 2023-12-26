@@ -38,6 +38,15 @@ export default class Storage {
 			return value;
 		});
 		console.log(this.myToDoListsObject);
+
+		if (this.myToDoListsObject == null) {
+			this.myToDoListsObject = new ToDoLists();
+			let myFirstToDoList = new ToDoList("My first ToDo List");
+			this.myToDoListsObject.addItem(myFirstToDoList);
+			console.log("executed!");
+		}
+		console.log("executed");
+		console.log(this.myToDoListsObject);
 		return this.myToDoListsObject;
 	}
 }
